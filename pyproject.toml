@@ -17,4 +17,4 @@ build-backend = "hatchling.build"
 dev-dependencies = []
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/foo"]
+packages = []
