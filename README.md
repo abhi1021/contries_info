@@ -21,7 +21,6 @@ Data source: [REST Countries endpoints](https://restcountries.com/#endpoints).
 ## Quickstart
 
 ```bash
-cd /Users/abhi/src/ERAV4/session_2/countries_info
 uv venv
 source .venv/bin/activate
 uv sync
