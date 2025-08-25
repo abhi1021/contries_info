@@ -97,7 +97,7 @@ wheels = [
 [[package]]
 name = "countries-info"
 version = "0.1.0"
-source = { editable = "." }
+source = { virtual = "." }
 dependencies = [
     { name = "flask" },
     { name = "requests" },
@@ -108,9 +108,6 @@ requires-dist = [
     { name = "flask", specifier = "==3.0.3" },
     { name = "requests", specifier = "==2.32.3" },
 ]
-
-[package.metadata.requires-dev]
-dev = []
 
 [[package]]
 name = "flask"
