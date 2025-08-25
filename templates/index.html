@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Countries Explorer</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container header-bar">
+        <div class="title-wrap">
+          <h1>Countries Explorer</h1>
+          <p>Select a country to view details powered by REST Countries.</p>
+        </div>
+        <button id="theme-toggle" class="btn" aria-label="Toggle theme" title="Toggle theme">Toggle theme</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <label for="country-input" class="label">Country</label>
+        <input id="country-input" class="input" list="country-list" placeholder="Type to search countries..." autocomplete="off" aria-label="Search country" value="India" />
+        <datalist id="country-list">
+          <option value="" disabled>Loading countries...</option>
+        </datalist>
+      </section>
+
+      <section id="results" class="card results">
+        <div class="flag-wrap">
+          <img id="flag" alt="Country flag" />
+        </div>
+        <div class="grid">
+          <div class="item"><span class="key">Capital:</span> <span id="capital" class="value">—</span></div>
+          <div class="item"><span class="key">Region:</span> <span id="region" class="value">—</span></div>
+          <div class="item"><span class="key">Population:</span> <span id="population" class="value">—</span></div>
+          <div class="item"><span class="key">Area:</span> <span id="area" class="value">—</span></div>
+          <div class="item"><span class="key">Languages:</span> <span id="languages" class="value">—</span></div>
+          <div class="item"><span class="key">Currencies:</span> <span id="currencies" class="value">—</span></div>
+          <div class="item"><span class="key">Timezones:</span> <span id="timezones" class="value">—</span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <small>Data from <a href="https://restcountries.com/#endpoints" target="_blank" rel="noopener">REST Countries</a> • © <a href="https://Bharade.com" target="_blank" rel="noopener">Bharade.com</a></small>
+      </div>
+    </footer>
+
+    <script src="/static/script.js"></script>
+  </body>
+  </html>
+
+

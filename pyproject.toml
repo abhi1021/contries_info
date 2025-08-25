@@ -1,0 +1,20 @@
+[project]
+name = "countries-info"
+version = "0.1.0"
+description = "Flask app to display country details from REST Countries"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "Flask==3.0.3",
+  "requests==2.32.3",
+]
+
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/foo"]
