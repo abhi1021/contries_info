@@ -1,26 +1,26 @@
+## Overview
 
 To run a Gunicorn/Uvicorn Flask application as a Linux service, create a Markdown document containing step-by-step instructions and a sample systemd unit file. The application path and command are based on the details provided.
 
+
 ## Quick Setup Instructions
 
-Below is a sample `systemd` unit file for running the application as a service. This configuration assumes the runtime command is:
-
-```
-uv run gunicorn -w 4 -b 0.0.0.0:5000 app:app
-```
-
-and the app is located at `/home/ec2-user/countries_info/app.py`.[^1][^2][^3]
-
-## Command to install Gunicorm
+**Command to install Gunicorm**
 
 ```aiignore
 pip install gunicorn
 ```
 
-***
+This configuration assumes the runtime command is when run from `/home/ec2-user/countries_info/`:
+
+```
+uv run gunicorn -w 4 -b 0.0.0.0:5000 app:app
+```
+The above command can be run, and the application will start, but we want it to start as a service when the vm boots.
+Following are steps for that.
 
 ## `countries_info.service` Systemd Unit File
-
+Below is a sample `systemd` unit file for running the application as a service. Create the file `/etc/systemd/system/countries_info.service`
 ```markdown
 # File: /etc/systemd/system/countries_info.service
 
@@ -41,18 +41,14 @@ RestartSec=3
 WantedBy=multi-user.target
 ```
 
-
-***
-
 ## Steps to Enable and Start the Service
 
-1. **Copy the unit file above to `/etc/systemd/system/countries_info.service`**.[^2][^1]
-2. **Reload systemd and start the service:**
+Reload systemd and start the service:
 
 ```sh
 sudo systemctl daemon-reload
-sudo systemctl start countries_info
 sudo systemctl enable countries_info
+sudo systemctl start countries_info
 ```
 
 3. **Check the service status:**
